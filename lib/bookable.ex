@@ -14,4 +14,9 @@ defmodule Bookable do
     Month.create_month(name, day, &Day.new/2)
   end
 
+  def create_month_of_weekdays(name, day) do
+    Month.create_month(name, day, &Day.new/2)
+    |> Month.get_weekdays()
+  end
+
 end
